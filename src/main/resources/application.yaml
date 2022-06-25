@@ -1,0 +1,32 @@
+server:
+  port: 9097
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver   #done
+    username: system    #done
+    password: admin123    #done
+    url: jdbc:oracle:thin:@localhost:1521/orclpdb1   #done
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+      connection-timeout: 1000    #done
+      maxLifetime: 2000000
+      minimum-idle: 100   #done
+      maximum-pool-size: 200    #done
+      pool-name: my-servicePool #done
+      idle-timeout: 10000   #done
+      connection-test-query: SELECT * FROM DUAL   #done
+
+  #File Upload Configuration
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+file:
+  storage:
+    location: fileStorage
+
